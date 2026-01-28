@@ -1,0 +1,59 @@
+body {
+  scroll-behavior: smooth;
+  background: linear-gradient(to bottom, #1a330d 0%, #223a13 100%);
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(34,58,19,0.10);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #223a13;
+}
+::-webkit-scrollbar-thumb {
+  background: #b6c93c;
+  border-radius: 4px;
+}
+
+/* Animaciones personalizadas */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(.4,0,.2,1);
+}
+.animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+.animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+.animate-fade-in-up.delay-300 { animation-delay: 0.3s; }
+.animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
+
+@keyframes grow {
+  from { width: 0; opacity: 0; }
+  to { width: 8rem; opacity: 1; }
+}
+.animate-grow {
+  animation: grow 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-bounce-in {
+  animation: bounce-in 1s cubic-bezier(.4,0,.2,1);
+}
