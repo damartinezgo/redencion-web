@@ -12,3 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
+
+
+function openModal(id) {
+  const modal = document.getElementById(`modal-${id}`)
+  modal.classList.remove('hidden')
+  modal.classList.add('flex')
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(`modal-${id}`)
+  modal.classList.add('hidden')
+}
+
+function changeImage(targetId, src) {
+  document.getElementById(targetId).src = src
+}
+
