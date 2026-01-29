@@ -14,18 +14,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// =========================
+// MODALES PILARES
+// =========================
+
 function openModal(id) {
-  const modal = document.getElementById(`modal-${id}`)
-  modal.classList.remove('hidden')
-  modal.classList.add('flex')
+  const modal = document.getElementById(`modal-${id}`);
+  if (!modal) return;
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal(id) {
-  const modal = document.getElementById(`modal-${id}`)
-  modal.classList.add('hidden')
+  const modal = document.getElementById(`modal-${id}`);
+  if (!modal) return;
+
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
 }
 
-function changeImage(targetId, src) {
-  document.getElementById(targetId).src = src
+function changeImage(imgId, src) {
+  const img = document.getElementById(imgId);
+  if (img) {
+    img.src = src;
+  }
 }
-
+	
