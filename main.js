@@ -49,23 +49,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("bg-music");
   const btn = document.getElementById("music-btn");
 
-  if (!audio || !btn) return;
+  if (!audio) return;
 
-  btn.addEventListener("click", () => {
+  audio.volume = 0.15;
 
-    if (audio.paused) {
-      audio.volume = 0.15;
+  // 👉 Intentar reproducir automáticamente
+  audio.play().catch(() => {
+    console.log("Autoplay bloqueado. Esperando interacción...");
+
+    // 👉 Reproducir en el primer clic del usuario
+    document.addEventListener("click", () => {
       audio.play();
-      btn.textContent = "🔇 Silenciar";
-
-    } else {
-      audio.pause();
-      btn.textContent = "🔊 Música";
-    }
-
+    }, { once: true });
   });
 
+  // 👉 Botón de música
+  if (btn) {
+    btn.addEventListener("click", () => {
+
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "🔇 Silenciar";
+      } else {
+        audio.pause();
+        btn.textContent = "🔊 Música";
+      }
+
+    });
+  }
+
 });
+
 
 
 
