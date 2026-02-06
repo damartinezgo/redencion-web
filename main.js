@@ -43,3 +43,29 @@ function changeImage(imgId, src) {
   }
 }
 	
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+
+  if (!audio || !btn) return;
+
+  btn.addEventListener("click", () => {
+
+    if (audio.paused) {
+      audio.volume = 0.15;
+      audio.play();
+      btn.textContent = "🔇 Silenciar";
+
+    } else {
+      audio.pause();
+      btn.textContent = "🔊 Música";
+    }
+
+  });
+
+});
+
+
+
