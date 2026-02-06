@@ -699,15 +699,15 @@
       </p>
 
       <!-- LISTA DE PERSONAS -->
-      <div class="border border-gray-200 rounded-3xl p-8 shadow-sm">
-        <h3 class="text-lg font-bold text-gray-900 mb-6 tracking-wide">
-          PERSONAS Y ORGANIZACIONES RECONOCIDAS
-        </h3>
+<div class="border border-gray-200 rounded-3xl p-8 shadow-sm">
+  <h3 class="text-lg font-bold text-gray-900 mb-6 tracking-wide">
+    PERSONAS Y ORGANIZACIONES RECONOCIDAS
+  </h3>
 
-        <!-- LISTA COMPACTA CON SCROLL -->
-        <div id="lista-nombres"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4
-                 max-h-72 overflow-y-auto pr-2 scroll-smooth">
+  <!-- LISTA COLAPSABLE -->
+  <div id="lista-nombres"
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-4
+              max-h-48 overflow-hidden transition-all duration-500">
 
 <span class="nombre">Luzdary Ramirez Forero</span>
 <span class="nombre">Edgar Vega Soto</span>
@@ -736,9 +736,17 @@
 <span class="nombre">Camilo Sexto Arteaga Díaz</span>
 <span class="nombre">Álvaro Hernán Pérez Ortíz</span>
 
-        </div>
+  </div>
 
-      </div>
+  <!-- BOTÓN VER MÁS -->
+  <button id="toggle-nombres"
+    class="mt-6 text-sm font-semibold text-yellow-600 hover:underline">
+    Ver más ↓
+  </button>
+
+</div>
+
+
     </div>
 
     <!-- TARJETA DE ENFASIS -->

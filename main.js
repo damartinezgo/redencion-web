@@ -80,6 +80,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const lista = document.getElementById("lista-nombres");
+  const btn = document.getElementById("toggle-nombres");
+
+  if (!lista || !btn) return;
+
+  btn.addEventListener("click", () => {
+
+    if (lista.classList.contains("max-h-48")) {
+
+      lista.classList.remove("max-h-48");
+      btn.textContent = "Ver menos ↑";
+
+    } else {
+
+      lista.classList.add("max-h-48");
+      btn.textContent = "Ver más ↓";
+
+    }
+
+  });
+
+});
+
 
 
 
