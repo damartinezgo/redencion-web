@@ -146,3 +146,41 @@ img {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ===== SLIDER AUTOMÁTICO ===== */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 40s linear infinite;
+}
+
+.slide-track img {
+  height: 220px;
+  width: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Animación infinita */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-track img {
+    height: 150px;
+  }
+}
