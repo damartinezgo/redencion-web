@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+
 
 // Scroll suave al hacer clic en VER IMPACTO SOCIAL
 document.addEventListener('DOMContentLoaded', function() {
@@ -174,4 +177,6 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.classList.remove("active");
   }
+});
+
 });
