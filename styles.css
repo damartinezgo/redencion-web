@@ -3,13 +3,6 @@ body {
   background: linear-gradient(to bottom, #1a330d 0%, #223a13 100%);
 }
 
-img {
-  object-fit: cover;
-  width: 100%;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px 0 rgba(34,58,19,0.10);
-  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -183,4 +176,9 @@ img {
   .slide-track img {
     height: 150px;
   }
+}
+
+.slide-track img {
+  width: auto !important;
+  max-width: none !important;
 }
