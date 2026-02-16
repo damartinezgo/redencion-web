@@ -107,4 +107,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const slider = document.querySelector(".slider");
+const track = document.querySelector(".slide-track");
 
+let isDown = false;
+let startX;
+
+// ===== DRAG =====
+
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX;
+  track.style.animationPlayState = "paused";
+});
+
+slider.addEventListener("mouseup", () => {
+  isDown = false;
+  track.style.animationPlayState = "running";
+});
+
+slider.addEventListener("mouseleave", () => {
+  isDown = false;
+  track.style.animationPlayState = "running";
+});
+
+slider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  const walk = (e.pageX - startX) * 1.2;
+  track.style.transform = `translateX(${walk}px)`;
+});
+
+// ===== TOUCH (celular) =====
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX;
+  track.style.animationPlayState = "paused";
+});
+
+slider.addEventListener("touchend", () => {
+  track.style.animationPlayState = "running";
+});
+
+slider.addEventListener("touchmove", (e) => {
+  const walk = (e.touches[0].pageX - startX) * 1.2;
+  track.style.transform = `translateX(${walk}px)`;
+});
+
+// ===== MODAL =====
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close-btn");
+
+document.querySelectorAll(".slide-track img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.classList.add("active");
+    modalImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
