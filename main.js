@@ -54,21 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // =========================
-// SLIDER
+// SLIDER (AUTO + LOOP)
 // =========================
 
 const slider = document.querySelector(".slider");
 
 if (slider) {
-  let isDragging = false;
   let startX;
   let scrollLeft;
   let autoScroll;
-  const speed = 4; // 👈 MÁS RÁPIDO
+  const speed = 2; // ajusta velocidad aquí
 
   function startAutoScroll() {
     autoScroll = setInterval(() => {
+
       slider.scrollLeft += speed;
+
+      // 👉 cuando llega al final, vuelve al inicio
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+        slider.scrollLeft = 0;
+      }
+
     }, 16);
   }
 
@@ -78,8 +84,8 @@ if (slider) {
 
   startAutoScroll();
 
+  // 👉 arrastrar con mouse
   slider.addEventListener("mousedown", (e) => {
-    isDragging = false;
     stopAutoScroll();
     startX = e.pageX;
     scrollLeft = slider.scrollLeft;
@@ -87,31 +93,26 @@ if (slider) {
 
   slider.addEventListener("mousemove", (e) => {
     if (e.buttons !== 1) return;
-    isDragging = true;
     const walk = (e.pageX - startX) * 1.5;
     slider.scrollLeft = scrollLeft - walk;
   });
 
-  slider.addEventListener("mouseup", () => {
-    startAutoScroll();
-  });
+  slider.addEventListener("mouseup", startAutoScroll);
+  slider.addEventListener("mouseleave", startAutoScroll);
 
+  // 👉 arrastrar con dedo
   slider.addEventListener("touchstart", (e) => {
-    isDragging = false;
     stopAutoScroll();
     startX = e.touches[0].pageX;
     scrollLeft = slider.scrollLeft;
   });
 
   slider.addEventListener("touchmove", (e) => {
-    isDragging = true;
     const walk = (e.touches[0].pageX - startX) * 1.5;
     slider.scrollLeft = scrollLeft - walk;
   });
 
-  slider.addEventListener("touchend", () => {
-    startAutoScroll();
-  });
+  slider.addEventListener("touchend", startAutoScroll);
 }
 
 
