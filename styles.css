@@ -189,28 +189,30 @@ body {
 .slider {
   overflow: hidden;
   position: relative;
+  width: 100%;
   cursor: grab;
-}
-
-.slider:active {
-  cursor: grabbing;
 }
 
 .slide-track {
   display: flex;
   gap: 20px;
-  animation: scroll 18s linear infinite; /* 🔥 más rápido */
-  will-change: transform;
+  animation: scroll 30s linear infinite; /* 🔥 MÁS RÁPIDO */
 }
 
 .slide-track img {
-  height: 200px;
+  height: 220px;
+  width: auto;
   border-radius: 16px;
+  flex-shrink: 0;
   object-fit: cover;
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Animación infinita */
+.slide-track img:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Animación automática */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -220,25 +222,38 @@ body {
   }
 }
 
-/* === MODAL === */
-
+/* ===== MODAL ===== */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
-
-  opacity: 0;
-  pointer-events: none;
-
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: opacity 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
   z-index: 9999;
 }
 
 .modal.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 16px;
+}
+
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
 }
