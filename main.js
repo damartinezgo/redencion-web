@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // AUDIO DE FONDO
+  // AUDIO
   // =========================
   const audio = document.getElementById("bg-music");
   const musicBtn = document.getElementById("music-btn");
@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.volume = 0.15;
 
     audio.play().catch(() => {
-      document.addEventListener("click", () => {
-        audio.play();
-      }, { once: true });
+      document.addEventListener("click", () => audio.play(), { once: true });
     });
 
     if (musicBtn) {
@@ -49,18 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (lista && toggleBtn) {
     toggleBtn.addEventListener("click", () => {
-      if (lista.classList.contains("max-h-48")) {
-        lista.classList.remove("max-h-48");
-        toggleBtn.textContent = "Ver menos ↑";
-      } else {
-        lista.classList.add("max-h-48");
-        toggleBtn.textContent = "Ver más ↓";
-      }
+      lista.classList.toggle("max-h-48");
+      toggleBtn.textContent =
+        lista.classList.contains("max-h-48") ? "Ver más ↓" : "Ver menos ↑";
     });
   }
 
   // =========================
-  // SLIDER DRAG + AUTO
+  // SLIDER
   // =========================
   const slider = document.querySelector(".slider");
 
@@ -68,54 +62,70 @@ document.addEventListener("DOMContentLoaded", () => {
     let isDown = false;
     let startX;
     let scrollLeft;
+    let autoScroll;
+    const speed = 2.5;
+
+    function startAutoScroll() {
+      autoScroll = setInterval(() => {
+        slider.scrollLeft += speed;
+      }, 16);
+    }
+
+    function stopAutoScroll() {
+      clearInterval(autoScroll);
+    }
+
+    startAutoScroll();
 
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
-      startX = e.pageX - slider.offsetLeft;
+      stopAutoScroll();
+      startX = e.pageX;
       scrollLeft = slider.scrollLeft;
     });
 
-    slider.addEventListener("mouseleave", () => isDown = false);
-    slider.addEventListener("mouseup", () => isDown = false);
+    slider.addEventListener("mouseup", () => {
+      isDown = false;
+      startAutoScroll();
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      isDown = false;
+      startAutoScroll();
+    });
 
     slider.addEventListener("mousemove", (e) => {
       if (!isDown) return;
       e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5;
+      const walk = (e.pageX - startX) * 1.5;
       slider.scrollLeft = scrollLeft - walk;
     });
 
-    // Touch móvil
     slider.addEventListener("touchstart", (e) => {
+      stopAutoScroll();
       startX = e.touches[0].pageX;
       scrollLeft = slider.scrollLeft;
     });
 
+    slider.addEventListener("touchend", startAutoScroll);
+
     slider.addEventListener("touchmove", (e) => {
-      const x = e.touches[0].pageX;
-      const walk = (x - startX) * 1.5;
+      const walk = (e.touches[0].pageX - startX) * 1.5;
       slider.scrollLeft = scrollLeft - walk;
     });
-
-    // Auto scroll
-    setInterval(() => {
-      slider.scrollLeft += 3;
-    }, 20);
   }
 
-});
+}); // ← ESTE CIERRE FALTABA
 
 // =========================
-// FUNCIONES GLOBALES (MODALES)
+// FUNCIONES GLOBALES
 // =========================
 
 function openModal(id) {
   const modal = document.getElementById(`modal-${id}`);
   if (!modal) return;
 
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
+  modal.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
@@ -123,8 +133,7 @@ function closeModal(id) {
   const modal = document.getElementById(`modal-${id}`);
   if (!modal) return;
 
-  modal.classList.add("hidden");
-  modal.classList.remove("flex");
+  modal.classList.remove("active");
   document.body.style.overflow = "";
 }
 
