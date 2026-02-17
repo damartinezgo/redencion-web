@@ -145,6 +145,7 @@ body {
   scroll-behavior: smooth;
   width: 100%;
   cursor: grab;
+  touch-action: pan-x;
 }
 
 .slide-track {
@@ -208,3 +209,4 @@ body {
   color: white;
   z-index: 10001;
 }
+

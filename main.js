@@ -62,25 +62,26 @@ const slider = document.querySelector(".slider");
 if (slider) {
   let startX;
   let scrollLeft;
-  let autoScroll;
-  const speed = 2; // ajusta velocidad aquí
+ let animationId;
+const speed = 2;
 
-  function startAutoScroll() {
-    autoScroll = setInterval(() => {
+function autoScroll() {
+  slider.scrollLeft += speed;
 
-      slider.scrollLeft += speed;
-
-      // 👉 cuando llega al final, vuelve al inicio
-      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-        slider.scrollLeft = 0;
-      }
-
-    }, 16);
+  if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+    slider.scrollLeft = 0;
   }
 
-  function stopAutoScroll() {
-    clearInterval(autoScroll);
-  }
+  animationId = requestAnimationFrame(autoScroll);
+}
+
+function startAutoScroll() {
+  animationId = requestAnimationFrame(autoScroll);
+}
+
+function stopAutoScroll() {
+  cancelAnimationFrame(animationId);
+}
 
   startAutoScroll();
 
