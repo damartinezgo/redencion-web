@@ -53,70 +53,97 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================
-  // SLIDER
-  // =========================
-  const slider = document.querySelector(".slider");
+// =========================
+// SLIDER
+// =========================
 
-  if (slider) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let autoScroll;
-    const speed = 2.5;
+const slider = document.querySelector(".slider");
 
-    function startAutoScroll() {
-      autoScroll = setInterval(() => {
-        slider.scrollLeft += speed;
-      }, 16);
-    }
+if (slider) {
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+  let autoScroll;
+  const speed = 4; // 👈 MÁS RÁPIDO
 
-    function stopAutoScroll() {
-      clearInterval(autoScroll);
-    }
-
-    startAutoScroll();
-
-    slider.addEventListener("mousedown", (e) => {
-      isDown = true;
-      stopAutoScroll();
-      startX = e.pageX;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener("mouseup", () => {
-      isDown = false;
-      startAutoScroll();
-    });
-
-    slider.addEventListener("mouseleave", () => {
-      isDown = false;
-      startAutoScroll();
-    });
-
-    slider.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const walk = (e.pageX - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    slider.addEventListener("touchstart", (e) => {
-      stopAutoScroll();
-      startX = e.touches[0].pageX;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener("touchend", startAutoScroll);
-
-    slider.addEventListener("touchmove", (e) => {
-      const walk = (e.touches[0].pageX - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
-    });
+  function startAutoScroll() {
+    autoScroll = setInterval(() => {
+      slider.scrollLeft += speed;
+    }, 16);
   }
 
-}); // ← ESTE CIERRE FALTABA
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
 
+  startAutoScroll();
+
+  slider.addEventListener("mousedown", (e) => {
+    isDragging = false;
+    stopAutoScroll();
+    startX = e.pageX;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener("mousemove", (e) => {
+    if (e.buttons !== 1) return;
+    isDragging = true;
+    const walk = (e.pageX - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  slider.addEventListener("mouseup", () => {
+    startAutoScroll();
+  });
+
+  slider.addEventListener("touchstart", (e) => {
+    isDragging = false;
+    stopAutoScroll();
+    startX = e.touches[0].pageX;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener("touchmove", (e) => {
+    isDragging = true;
+    const walk = (e.touches[0].pageX - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  slider.addEventListener("touchend", () => {
+    startAutoScroll();
+  });
+}
+
+
+// =========================
+// GALERÍA — MODAL IMAGEN
+// =========================
+
+const modal = document.getElementById("image-modal");
+const modalImg = document.getElementById("modal-image");
+const closeBtn = document.getElementById("modal-close");
+
+document.querySelectorAll(".slide-track img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.classList.add("active");
+    modalImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
+
+});
 // =========================
 // FUNCIONES GLOBALES
 // =========================
