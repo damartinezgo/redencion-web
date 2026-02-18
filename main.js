@@ -170,3 +170,41 @@ function changeImage(imgId, src) {
   const img = document.getElementById(imgId);
   if (img) img.src = src;
 }
+
+// =========================
+// ABRIR MODAL
+// =========================
+function openModal(nombre) {
+  const modal = document.getElementById(`modal-${nombre}`);
+  if (!modal) return;
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  // Bloquear scroll del body
+  document.body.classList.add("overflow-hidden");
+}
+
+// =========================
+// CERRAR MODAL
+// =========================
+function closeModal(nombre) {
+  const modal = document.getElementById(`modal-${nombre}`);
+  if (!modal) return;
+
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+
+  // Restaurar scroll
+  document.body.classList.remove("overflow-hidden");
+}
+
+// =========================
+// CAMBIAR IMAGEN
+// =========================
+function changeImage(id, src) {
+  const img = document.getElementById(id);
+  if (img) {
+    img.src = src;
+  }
+}

@@ -289,8 +289,10 @@
 
 
 
-  <!-- PILARES SECTION -->
-<section id="pilares" class="bg-[#f5f7fa] py-24 px-6">
+<!-- ========================= -->
+<!-- PILARES SECTION MEJORADA -->
+<!-- ========================= -->
+<section id="pilares" class="bg-gradient-to-b from-[#f5f7fa] to-white py-28 px-6">
   <div class="max-w-7xl mx-auto">
 
     <span class="inline-block px-4 py-1 rounded-full border border-[#b6c93c] bg-[#f7fbe7] text-[#1a330d] font-semibold tracking-widest text-xs mb-4">
@@ -301,70 +303,140 @@
       Nuestros Pilares
     </h2>
 
-    <p class="text-lg text-[#4b5e3c] mb-14 max-w-2xl">
+    <p class="text-lg text-[#4b5e3c] mb-16 max-w-2xl">
       Un enfoque holístico que aborda las necesidades fundamentales para el desarrollo social sostenible.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <!-- GRID RESPONSIVE MEJORADO -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <!-- CARD -->
-      <div onclick="openModal('salud')" class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
-        <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud-real.jpg" class="h-40 w-full object-cover">
-        <div class="p-5">
-<h3 class="text-xl font-extrabold text-[#1a330d]">Salud</h3>
-<p class="text-sm text-[#4b5e3c] mb-2">
-  Fortalecer la atención primaria en salud y garantizar equidad en el acceso a servicios de salud.
-</p>
+      <!-- ================= CARD SALUD ================= -->
+      <div onclick="openModal('salud')" 
+           class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-[#b6c93c]">
 
-          <span class="text-sm font-semibold text-yellow-600">Ver galería →</span>
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud-real.jpg"
+               class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-[#1a330d] mb-2 group-hover:text-[#6b8e23] transition">
+            Salud
+          </h3>
+          <p class="text-sm text-[#4b5e3c] leading-relaxed mb-4">
+            Fortalecer la atención primaria y garantizar equidad en el acceso a servicios de salud.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-[#b6c93c] group-hover:underline">
+              Ver galería
+            </span>
+            <span class="text-[#b6c93c] text-lg group-hover:translate-x-1 transition">→</span>
+          </div>
         </div>
       </div>
 
-      <div onclick="openModal('educacion')" class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
-        <img src="images/educacion/educacion1.jpeg" class="h-48 w-full object-cover">
-        <div class="p-5">
-<h3 class="text-xl font-extrabold text-[#1a330d]">Educación</h3>
-<p class="text-sm text-[#4b5e3c] mb-2">
-  Construcción de centros educativos y programas integrales de enseñanza.
-</p>
+      <!-- ================= CARD EDUCACIÓN ================= -->
+      <div onclick="openModal('educacion')" 
+           class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-[#b6c93c]">
 
-          <span class="text-sm font-semibold text-yellow-600">Ver galería →</span>
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="images/educacion/educacion1.jpeg"
+               class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-[#1a330d] mb-2 group-hover:text-[#6b8e23] transition">
+            Educación
+          </h3>
+          <p class="text-sm text-[#4b5e3c] leading-relaxed mb-4">
+            Construcción de centros educativos y programas integrales de enseñanza.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-[#b6c93c] group-hover:underline">
+              Ver galería
+            </span>
+            <span class="text-[#b6c93c] text-lg group-hover:translate-x-1 transition">→</span>
+          </div>
         </div>
       </div>
 
-      <div onclick="openModal('economia')" class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
-        <img src="images/economia/economia1.jpeg" class="h-40 w-full object-cover">
-        <div class="p-5">
-<h3 class="text-xl font-extrabold text-[#1a330d]">Economía</h3>
-<p class="text-sm text-[#4b5e3c] mb-2">
-  Impulso a la exportación de productos con valor agregado.
-</p>
+      <!-- ================= CARD ECONOMÍA ================= -->
+      <div onclick="openModal('economia')" 
+           class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-[#b6c93c]">
 
-          <span class="text-sm font-semibold text-yellow-600">Ver galería →</span>
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="images/economia/economia1.jpeg"
+               class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-[#1a330d] mb-2 group-hover:text-[#6b8e23] transition">
+            Economía
+          </h3>
+          <p class="text-sm text-[#4b5e3c] leading-relaxed mb-4">
+            Impulso a la exportación de productos con valor agregado.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-[#b6c93c] group-hover:underline">
+              Ver galería
+            </span>
+            <span class="text-[#b6c93c] text-lg group-hover:translate-x-1 transition">→</span>
+          </div>
         </div>
       </div>
 
-      <div onclick="openModal('infra')" class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
-        <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/infraestructura/infra1.jpeg" class="h-40 w-full object-cover">
-        <div class="p-5">
-<h3 class="text-xl font-extrabold text-[#1a330d]">Infraestructura</h3>
-<p class="text-sm text-[#4b5e3c] mb-2">
-  Desarrollo de viviendas dignas y mejoramiento de vías de movilidad.
-</p>
+      <!-- ================= CARD INFRA ================= -->
+      <div onclick="openModal('infra')" 
+           class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-[#b6c93c]">
 
-          <span class="text-sm font-semibold text-yellow-600">Ver galería →</span>
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="images/infraestructura/infra1.jpeg"
+               class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-[#1a330d] mb-2 group-hover:text-[#6b8e23] transition">
+            Infraestructura
+          </h3>
+          <p class="text-sm text-[#4b5e3c] leading-relaxed mb-4">
+            Desarrollo de viviendas dignas y mejoramiento de vías de movilidad.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-[#b6c93c] group-hover:underline">
+              Ver galería
+            </span>
+            <span class="text-[#b6c93c] text-lg group-hover:translate-x-1 transition">→</span>
+          </div>
         </div>
       </div>
 
-      <div onclick="openModal('ambiente')" class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer">
-        <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/ambiental/ambiental1.jpeg" class="h-40 w-full object-cover">
-        <div class="p-5">
-<h3 class="text-xl font-extrabold text-[#1a330d]">Medio Ambiente</h3>
-<p class="text-sm text-[#4b5e3c] mb-2">
-  Recuperación y preservación de bosques y ecosistemas.
-</p>
+      <!-- ================= CARD AMBIENTE ================= -->
+      <div onclick="openModal('ambiente')" 
+           class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-[#b6c93c]">
 
-          <span class="text-sm font-semibold text-yellow-600">Ver galería →</span>
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="images/ambiental/ambiental1.jpeg"
+               class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        </div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-[#1a330d] mb-2 group-hover:text-[#6b8e23] transition">
+            Medio Ambiente
+          </h3>
+          <p class="text-sm text-[#4b5e3c] leading-relaxed mb-4">
+            Recuperación y preservación de bosques y ecosistemas.
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-[#b6c93c] group-hover:underline">
+              Ver galería
+            </span>
+            <span class="text-[#b6c93c] text-lg group-hover:translate-x-1 transition">→</span>
+          </div>
         </div>
       </div>
 
@@ -374,220 +446,249 @@
 
 
 <!-- MODAL -->
+<!-- ================= MODAL SALUD ================= -->
 <div id="modal-salud"
-     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
      onclick="closeModal('salud')">
-  <div class="bg-white max-w-5xl w-full rounded-3xl overflow-hidden relative">
-    <button onclick="closeModal('salud')" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black  shadow-md
-                   flex items-center justify-center text-2xl font-bold">×</button>
+
+  <div class="bg-white max-w-5xl w-full mx-4 rounded-3xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+       onclick="event.stopPropagation()">
+
+    <!-- Botón cerrar -->
+    <button onclick="closeModal('salud')"
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black shadow-md
+                   flex items-center justify-center text-2xl font-bold hover:scale-110 transition">
+      ×
+    </button>
 
     <div class="grid md:grid-cols-2">
+
+      <!-- IMÁGENES -->
       <div class="p-6">
-        <img id="img-salud" src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud-real.jpg"
-             class="w-full h-64 object-cover rounded-2xl mb-4">
-        <div class="flex gap-3 overflow-x-auto scrollbar-hide">
+        <div class="aspect-[4/3] w-full mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+          <img id="img-salud"
+               src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud-real.jpg"
+               class="w-full h-full object-contain">
+        </div>
+
+        <div class="flex gap-3 overflow-x-auto">
           <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud1.jpg"
-               onclick="changeImage('img-salud', this.src)" class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+               onclick="changeImage('img-salud', this.src)"
+               class="h-20 w-28 object-cover rounded-xl cursor-pointer hover:opacity-80 transition">
           <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/salud/salud2.jpg"
-               onclick="changeImage('img-salud', this.src)" class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+               onclick="changeImage('img-salud', this.src)"
+               class="h-20 w-28 object-cover rounded-xl cursor-pointer hover:opacity-80 transition">
         </div>
       </div>
+
+      <!-- TEXTO -->
       <div class="p-8 text-[#1a330d]">
-<p class="text-[#4b5e3c] mb-6">
-  Su punto clave es fortalecer la atención primaria en salud. Mejorar la coordinación entre los niveles de atención sanitaria.
-  Aumentar la inversión en prevención y control de enfermedades a su vez también el mejoramiento y adecuación de infraestructuras
-  para prestadores de servicios de salud además de garantizar equidad en el acceso a servicios de salud.
-</p>
+        <h3 class="text-2xl font-bold mb-4">Salud</h3>
 
-<ul class="space-y-2 text-sm">
-  <li>• Implementar clínicas móviles para llegar a zonas rurales</li>
-  <li>• Construcción de clínicas de nivel 3 y 4</li>
-  <li>• Mejorar la capacidad hospitalaria</li>
-</ul>
+        <p class="text-[#4b5e3c] mb-6 leading-relaxed">
+          Fortalecemos la atención primaria en salud, mejoramos la coordinación entre niveles sanitarios
+          y garantizamos equidad en el acceso a servicios médicos.
+        </p>
 
+        <ul class="space-y-3 text-sm">
+          <li>• Clínicas móviles en zonas rurales</li>
+          <li>• Construcción de clínicas nivel 3 y 4</li>
+          <li>• Ampliación de capacidad hospitalaria</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </div>
 
 <!-- MODAL EDUCACIÓN -->
+<!-- ================= MODAL EDUCACIÓN ================= -->
 <div id="modal-educacion"
-     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
      onclick="closeModal('educacion')">
 
-  <div class="bg-white max-w-5xl w-full rounded-3xl overflow-hidden relative"
+  <div class="bg-white max-w-5xl w-full mx-4 rounded-3xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
        onclick="event.stopPropagation()">
 
     <button onclick="closeModal('educacion')"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black  shadow-md
-                   flex items-center justify-center text-2xl font-bold">×</button>
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black shadow-md
+                   flex items-center justify-center text-2xl font-bold hover:scale-110 transition">
+      ×
+    </button>
 
     <div class="grid md:grid-cols-2">
-      <!-- IMÁGENES -->
-      <div class="p-6">
-        <img id="img-educacion"
-             src="images/educacion/educacion1.jpeg"
-             class="w-full h-64 object-cover rounded-2xl mb-4">
 
-        <div class="flex gap-3 overflow-x-auto scrollbar-hide">
+      <div class="p-6">
+        <div class="aspect-[4/3] w-full mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+          <img id="img-educacion"
+               src="images/educacion/educacion1.jpeg"
+               class="w-full h-full object-contain">
+        </div>
+
+        <div class="flex gap-3 overflow-x-auto">
           <img src="images/educacion/educacion1.jpeg"
                onclick="changeImage('img-educacion', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+               class="h-20 w-28 object-cover rounded-xl cursor-pointer hover:opacity-80 transition">
           <img src="images/educacion/educacion2.jpeg"
                onclick="changeImage('img-educacion', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
-               <img src="images/niños/niños1.jpeg"
-               onclick="changeImage('img-educacion', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+               class="h-20 w-28 object-cover rounded-xl cursor-pointer hover:opacity-80 transition">
         </div>
       </div>
 
-      <!-- TEXTO -->
       <div class="p-8 text-[#1a330d]">
-        <p class="text-[#4b5e3c] mb-6">
-  En este contexto trabajaremos la construcción de centros educativos en zonas rurales y urbanas vulnerables con el fin de
-  mejorar el sistema educativo con programas integrales de enseñanza.
-  Fomentar una educación con formación íntegra y equitativa con inversión en ciencia, tecnología e investigación.
-</p>
+        <h3 class="text-2xl font-bold mb-4">Educación</h3>
 
-<ul class="space-y-2 text-sm">
-  <li>• Recuperación y preservación de lenguas nativas</li>
-  <li>• Raíces y cultura ancestral</li>
-</ul>
+        <p class="text-[#4b5e3c] mb-6 leading-relaxed">
+          Construimos centros educativos en zonas vulnerables e impulsamos programas
+          integrales con enfoque en ciencia, tecnología e investigación.
+        </p>
 
+        <ul class="space-y-3 text-sm">
+          <li>• Educación integral y equitativa</li>
+          <li>• Recuperación de lenguas nativas</li>
+          <li>• Cultura ancestral y formación ética</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </div>
 
 <!-- MODAL ECONOMÍA -->
+<!-- ================= MODAL ECONOMÍA ================= -->
 <div id="modal-economia"
-     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
      onclick="closeModal('economia')">
-  <div class="bg-white max-w-5xl w-full rounded-3xl overflow-hidden relative"
+
+  <div class="bg-white max-w-5xl w-full mx-4 rounded-3xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
        onclick="event.stopPropagation()">
+
     <button onclick="closeModal('economia')"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black  shadow-md
-                   flex items-center justify-center text-2xl font-bold">×</button>
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black shadow-md
+                   flex items-center justify-center text-2xl font-bold hover:scale-110 transition">
+      ×
+    </button>
+
     <div class="grid md:grid-cols-2">
-      <!-- IMÁGENES -->
+
       <div class="p-6">
-        <img id="img-economia"
-             src="images/economia/economia1.jpeg"
-             class="w-full h-64 object-cover rounded-2xl mb-4">
-        <div class="flex gap-3 overflow-x-auto scrollbar-hide">
+        <div class="aspect-[4/3] w-full mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+          <img id="img-economia"
+               src="images/economia/economia1.jpeg"
+               class="w-full h-full object-contain">
+        </div>
+
+        <div class="flex gap-3 overflow-x-auto">
           <img src="images/economia/economia1.jpeg"
                onclick="changeImage('img-economia', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
-          <img src="https://lemon-ocean-0f749e70f.4.azurestaticapps.net/assets/images/economia/econ2.jpg"
-               onclick="changeImage('img-economia', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+               class="h-20 w-28 object-cover rounded-xl cursor-pointer hover:opacity-80 transition">
         </div>
       </div>
-      <!-- TEXTO -->
+
       <div class="p-8 text-[#1a330d]">
-<p class="text-[#4b5e3c] mb-6">
-  Este es uno de los pilares más importantes ya que va a dar impulso a la exportación de productos con valor agregado que será
-  fomento del crecimiento y desarrollo empresarial, junto a la implementación de programas de sostenibilidad para productores
-  campesinos y comercialización de productos en mercados internos e internacionales.
-</p>
+        <h3 class="text-2xl font-bold mb-4">Economía</h3>
 
-<ul class="space-y-2 text-sm">
-  <li>• Nuestro proyecto se implementara a traves de nuestra banca privada</li>
-  <li>• BANK UNIÓN COLOMBIA</li>
-</ul>
+        <p class="text-[#4b5e3c] mb-6 leading-relaxed">
+          Impulsamos la exportación de productos con valor agregado,
+          fomentando el desarrollo empresarial sostenible.
+        </p>
 
+        <ul class="space-y-3 text-sm">
+          <li>• Programas para productores campesinos</li>
+          <li>• Comercialización nacional e internacional</li>
+          <li>• Sostenibilidad empresarial</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </div>
 
+
 <!-- MODAL INFRA -->
+<!-- ================= MODAL INFRA ================= -->
 <div id="modal-infra"
-     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
      onclick="closeModal('infra')">
 
-  <div class="bg-white max-w-5xl w-full rounded-3xl overflow-hidden relative"
+  <div class="bg-white max-w-5xl w-full mx-4 rounded-3xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
        onclick="event.stopPropagation()">
 
     <button onclick="closeModal('infra')"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black  shadow-md
-                   flex items-center justify-center text-2xl font-bold">×</button>
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black shadow-md
+                   flex items-center justify-center text-2xl font-bold hover:scale-110 transition">
+      ×
+    </button>
 
     <div class="grid md:grid-cols-2">
-      <!-- IMÁGENES -->
-      <div class="p-6">
-        <img id="img-infra"
-             src="images/infraestructura/infra1.jpeg"
-             class="w-full h-64 object-cover rounded-2xl mb-4">
 
-        <div class="flex gap-3 overflow-x-auto scrollbar-hide">
-          <img src="images/infraestructura/infra1.jpeg"
-               onclick="changeImage('img-infra', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
-          <img src="images/infraestructura/infra2.jpeg"
-               onclick="changeImage('img-infra', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+      <div class="p-6">
+        <div class="aspect-[4/3] w-full mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+          <img id="img-infra"
+               src="images/infraestructura/infra1.jpeg"
+               class="w-full h-full object-contain">
         </div>
       </div>
 
-      <!-- TEXTO -->
       <div class="p-8 text-[#1a330d]">
-<p class="text-[#4b5e3c] mb-6">
-  Aquí visibilizamos el desarrollo de viviendas dignas que ofrezcan una calidad de vida, también la creación de
-  microempresas y fortalecimiento de empresas en sectores campesinos, industriales y comerciales hasta el mejoramiento de vías
-  de movilidad para conectar comunidades y fortalecer el comercio local.
-</p>
+        <h3 class="text-2xl font-bold mb-4">Infraestructura</h3>
 
+        <p class="text-[#4b5e3c] mb-6 leading-relaxed">
+          Desarrollamos viviendas dignas, fortalecemos microempresas
+          y mejoramos vías para conectar comunidades.
+        </p>
       </div>
+
     </div>
   </div>
 </div>
+
 
 
 <!-- MODAL AMBIENTE -->
+<!-- ================= MODAL AMBIENTE ================= -->
 <div id="modal-ambiente"
-     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
      onclick="closeModal('ambiente')">
 
-  <div class="bg-white max-w-5xl w-full rounded-3xl overflow-hidden relative"
+  <div class="bg-white max-w-5xl w-full mx-4 rounded-3xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
        onclick="event.stopPropagation()">
 
     <button onclick="closeModal('ambiente')"
-            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white text-black  shadow-md
-                   flex items-center justify-center text-2xl font-bold">×</button>
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black shadow-md
+                   flex items-center justify-center text-2xl font-bold hover:scale-110 transition">
+      ×
+    </button>
 
     <div class="grid md:grid-cols-2">
-      <!-- IMÁGENES -->
-      <div class="p-6">
-        <img id="img-ambiente"
-             src="images/ambiental/ambiental1.jpeg"
-             class="w-full h-64 object-cover rounded-2xl mb-4">
 
-        <div class="flex gap-3 overflow-x-auto scrollbar-hide">
-          <img src="images/ambiental/ambiental1.jpeg"
-               onclick="changeImage('img-ambiente', this.src)"
-               class="h-20 w-28 object-cover rounded-xl cursor-pointer">
+      <div class="p-6">
+        <div class="aspect-[4/3] w-full mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+          <img id="img-ambiente"
+               src="images/ambiental/ambiental1.jpeg"
+               class="w-full h-full object-contain">
         </div>
       </div>
 
-      <!-- TEXTO -->
       <div class="p-8 text-[#1a330d]">
-<p class="text-[#4b5e3c] mb-6">
-  Finalmente, y como eje fundamental del proyecto, priorizamos un área dedicada a la recuperación y preservación de bosques y ecosistemas, asegurando que cada acción se desarrolle de forma responsable y sostenible.
-</p>
+        <h3 class="text-2xl font-bold mb-4">Medio Ambiente</h3>
 
-<ul class="space-y-2 text-sm">
-  <li>• Implementación de tecnologías para la gestión sostenible de residuos sólidos urbanos, industriales, hospitalarios y peligrosos</li>
-  <li>• Manejo de aceites</li>
-  <li>• Restauración de afluentes hídricos como ríos, ciénagas, represas y reservorios de agua</li>
-  <li>• Programas de reforestación con beneficios para las comunidades locales</li>
-</ul>
+        <p class="text-[#4b5e3c] mb-6 leading-relaxed">
+          Recuperamos y preservamos ecosistemas garantizando
+          un desarrollo responsable y sostenible.
+        </p>
 
+        <ul class="space-y-3 text-sm">
+          <li>• Gestión sostenible de residuos</li>
+          <li>• Restauración hídrica</li>
+          <li>• Programas de reforestación</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </div>
+
 
 
 
