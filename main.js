@@ -13,6 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+const impactoTrack = document.getElementById("impactoTrack");
+
+let impactoIndex = 0;
+const impactoTotal = impactoTrack.children.length;
+
+function moverImpacto() {
+
+  impactoIndex++;
+
+  if (impactoIndex >= impactoTotal) {
+    impactoIndex = 0;
+  }
+
+  impactoTrack.style.transform =
+    `translateX(-${impactoIndex * 100}%)`;
+
+}
+
+// velocidad (3000 = 3 segundos)
+// puedes cambiar a 2000 si quieres más rápido
+setInterval(moverImpacto, 3000);
+
+
   // =========================
   // AUDIO
   // =========================

@@ -329,6 +329,120 @@
   </div>
 </section>
 
+<section class="py-16 bg-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4">
+    
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <div class="space-y-6">
+        <div>
+          <span class="text-[#b6c93c] font-bold uppercase tracking-wider text-sm italic">Transformación Real</span>
+          <h2 class="text-4xl font-extrabold text-[#1a330d] mt-2 leading-tight">
+            Vivienda digna y <br>
+            <span class="text-[#b6c93c]">transformación social</span>
+          </h2>
+        </div>
+
+        <div class="bg-[#f7fbe7] border-l-4 border-[#b6c93c] rounded-r-2xl p-6 shadow-sm space-y-4">
+          <p class="text-sm text-gray-700 text-justify leading-relaxed">
+            La pobreza en Colombia continúa afectando a múltiples comunidades rurales y urbanas,
+            limitando el acceso a vivienda adecuada, servicios básicos y oportunidades de desarrollo.
+            Muchas familias habitan en condiciones precarias, con materiales inadecuados y alta
+            vulnerabilidad frente a factores ambientales y sociales.
+          </p>
+          
+          <p class="text-sm text-gray-700 text-justify leading-relaxed font-semibold">
+            En zonas como María La Baja, Retiro y San Cristóbal, estas condiciones impactan directamente
+            la calidad de vida, perpetuando ciclos de desigualdad y dificultando el progreso social
+            sostenible de las comunidades.
+          </p>
+
+          <p class="text-sm text-gray-700 text-justify leading-relaxed border-t border-[#b6c93c]/30 pt-4">
+            Nuestro proyecto busca transformar esta realidad mediante la implementación de soluciones
+            de vivienda digna, mejorando la seguridad, el bienestar y el entorno social de las familias,
+            contribuyendo así al desarrollo sostenible y a la reducción de la pobreza.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <div class="absolute -inset-4 bg-[#b6c93c]/20 rounded-3xl transform rotate-2 transition group-hover:rotate-1"></div>
+        
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-100" id="impactoCarousel">
+          
+          <div id="impactoTrack" class="flex transition-transform duration-700 ease-in-out">
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto1.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto2.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto3.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto4.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto5.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+            <div class="w-full flex-shrink-0 h-[450px]">
+              <img src="images/impacto/impacto6.jpeg" onclick="openImageModal(this.src)" class="w-full h-full object-cover cursor-pointer">
+            </div>
+          </div>
+
+          <button onclick="moveCarousel(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100">
+            <svg class="w-6 h-6 text-[#1a330d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="moveCarousel(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100">
+            <svg class="w-6 h-6 text-[#1a330d]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div class="dot w-2 h-2 rounded-full bg-white transition-all cursor-pointer" onclick="goToSlide(0)"></div>
+            <div class="dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" onclick="goToSlide(1)"></div>
+            <div class="dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" onclick="goToSlide(2)"></div>
+            <div class="dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" onclick="goToSlide(3)"></div>
+            <div class="dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" onclick="goToSlide(4)"></div>
+            <div class="dot w-2 h-2 rounded-full bg-white/50 transition-all cursor-pointer" onclick="goToSlide(5)"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 6;
+  const track = document.getElementById('impactoTrack');
+  const dots = document.querySelectorAll('.dot');
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Actualizar dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('bg-white', index === currentSlide);
+      dot.classList.toggle('bg-white/50', index !== currentSlide);
+      dot.classList.toggle('w-4', index === currentSlide); // Efecto de dot alargado
+    });
+  }
+
+  function moveCarousel(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+
+  // Auto-reproducción opcional cada 5 segundos
+  setInterval(() => moveCarousel(1), 5000);
+</script>
+
 <!-- ========================= -->
 <!-- PILARES SECTION MEJORADA -->
 <!-- ========================= -->
